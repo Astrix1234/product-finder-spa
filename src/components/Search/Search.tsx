@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import scss from './Header.module.scss';
+import { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import scss from './Search.module.scss';
 import SearchIcon from '@mui/icons-material/Search';
 import { useFormik } from 'formik';
 import { validationSchema } from './validationSchema';
@@ -10,11 +10,12 @@ interface FormValues {
   id: string;
 }
 
-export const Header = () => {
+export const Search = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [hovered, setHovered] = useState(false);
 
-  const { id, setId } = store();
+  const { setId, setPrevPath } = store();
 
   const formik = useFormik<FormValues>({
     initialValues: {
@@ -23,32 +24,33 @@ export const Header = () => {
     validationSchema,
     onSubmit: (values: FormValues) => {
       setId(Number(values.id));
+      setPrevPath(location.pathname);
       navigate(`/product/${values.id}`);
       formik.resetForm();
     },
   });
 
-  useEffect(() => {
-    console.log(id);
-  }, [id]);
-
   return (
-    <header>
+    <div>
       <form className={scss.form} onSubmit={formik.handleSubmit}>
         <label htmlFor="id" className={scss.label}>
           Find product by ID
           <input
-            className={`${scss.input} ${
-              formik.touched.id && formik.errors.id ? scss.error : ''
-            }`}
+            className={`${scss.input} ${formik.errors.id ? scss.error : ''}`}
             id="id"
             name="id"
             onChange={formik.handleChange}
             value={formik.values.id}
-            onBlur={formik.handleBlur}
           />
+          {formik.errors.id ? (
+            <div className={scss.formikMessage}>{formik.errors.id}</div>
+          ) : null}
         </label>
-        <button type="submit" className={scss.button}>
+        <button
+          type="submit"
+          className={scss.button}
+          disabled={!formik.isValid || !formik.dirty}
+        >
           <div
             style={{
               transition: 'color 0.3s ease-in-out',
@@ -61,6 +63,6 @@ export const Header = () => {
           </div>
         </button>
       </form>
-    </header>
+    </div>
   );
 };

@@ -8,6 +8,7 @@
 }
 
 .input {
+    max-width: 320px;
     width: 100%;
     padding: 10px 50px 10px 10px;
     margin: 10px 0;
@@ -19,7 +20,6 @@
         outline: none;
         border-color: blue;
     }
-
 }
 
 .button {
@@ -29,8 +29,20 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
+
+    &:disabled {
+        cursor: not-allowed;
+    }
 }
 
 .error {
     border-color: red;
+}
+
+.formikMessage {
+    color: red;
+    font-size: 14px;
+    position: absolute;
+    right: 0;
+    top: 80px;
 }

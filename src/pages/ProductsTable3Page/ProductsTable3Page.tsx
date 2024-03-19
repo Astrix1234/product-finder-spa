@@ -1,19 +1,23 @@
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import store from '../../Zustand/store';
-import { getProducts } from '../../Zustand/api';
+import { getLastTwoProductsOnLastPage } from '../../Zustand/api';
 import { toast } from 'react-toastify';
 import { Table } from '../../components/Table/Table';
 
-export default function ProductsTable1Page() {
-  const { pageProducts, setPageProducts, setLoading } = store();
+export default function ProductsTable3Page() {
+  const {
+    lastTwoProductsOnLastPage,
+    setLastTwoProductsOnLastPage,
+    setLoading,
+  } = store();
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchLastProducts = async () => {
       setLoading(true);
       try {
-        const data = await getProducts(1, 5);
-        setPageProducts(data);
+        const data = await getLastTwoProductsOnLastPage();
+        setLastTwoProductsOnLastPage(data);
       } catch (error) {
         console.error(error);
         if (error instanceof Error && error.message) {
@@ -25,15 +29,15 @@ export default function ProductsTable1Page() {
         setLoading(false);
       }
     };
-    fetchProducts();
-  }, [setPageProducts, setLoading]);
+    fetchLastProducts();
+  }, [setLastTwoProductsOnLastPage, setLoading]);
 
   return (
     <>
       <Helmet>
-        <title>Product Finder - Page First</title>
+        <title>Product Finder - Page Third</title>
       </Helmet>
-      <Table pageProducts={pageProducts} />
+      <Table pageProducts={lastTwoProductsOnLastPage} />
     </>
   );
 }
