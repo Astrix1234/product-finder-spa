@@ -1,8 +1,6 @@
 import axios from 'axios';
-import { URL } from './urlConfig';
 
-const apiUrl = URL;
-// const apiUrl = process.env.BASE_URL;
+const apiUrl = process.env.BASE_URL;
 
 if (!apiUrl) {
   throw new Error('URL is not defined in environment variables.');
