@@ -1,13 +1,14 @@
 import axios from 'axios';
 
-const apiUrl = process.env.BASE_URL;
+const apiUrl = process.env.REACT_APP_BASE_URL;
 
 if (!apiUrl) {
-  throw new Error('URL is not defined in environment variables.');
+  throw new Error(
+    'REACT_APP_BASE_URL is not defined in environment variables.'
+  );
 }
 
 export const getProducts = async (page = 1, perPage = 5) => {
-  console.log(URL);
   try {
     const response = await axios.get(apiUrl, {
       params: { page: page, per_page: perPage },
