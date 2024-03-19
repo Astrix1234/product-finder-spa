@@ -1,15 +1,33 @@
 {
   "files": {
-    "main.css": "/product-finder-spa/static/css/main.f9d6d243.css",
-    "main.js": "/product-finder-spa/static/js/main.83f74330.js",
-    "static/js/453.11023060.chunk.js": "/product-finder-spa/static/js/453.11023060.chunk.js",
+    "main.css": "/product-finder-spa/static/css/main.41d84a6d.css",
+    "main.js": "/product-finder-spa/static/js/main.d9b327bb.js",
+    "static/css/928.adec636f.chunk.css": "/product-finder-spa/static/css/928.adec636f.chunk.css",
+    "static/js/928.728fad38.chunk.js": "/product-finder-spa/static/js/928.728fad38.chunk.js",
+    "static/css/402.adec636f.chunk.css": "/product-finder-spa/static/css/402.adec636f.chunk.css",
+    "static/js/402.edc56d93.chunk.js": "/product-finder-spa/static/js/402.edc56d93.chunk.js",
+    "static/css/140.adec636f.chunk.css": "/product-finder-spa/static/css/140.adec636f.chunk.css",
+    "static/js/140.f302c159.chunk.js": "/product-finder-spa/static/js/140.f302c159.chunk.js",
+    "static/css/742.adec636f.chunk.css": "/product-finder-spa/static/css/742.adec636f.chunk.css",
+    "static/js/742.9c427456.chunk.js": "/product-finder-spa/static/js/742.9c427456.chunk.js",
+    "static/js/453.728befa3.chunk.js": "/product-finder-spa/static/js/453.728befa3.chunk.js",
+    "static/js/154.6a8ba19b.chunk.js": "/product-finder-spa/static/js/154.6a8ba19b.chunk.js",
     "index.html": "/product-finder-spa/index.html",
-    "main.f9d6d243.css.map": "/product-finder-spa/static/css/main.f9d6d243.css.map",
-    "main.83f74330.js.map": "/product-finder-spa/static/js/main.83f74330.js.map",
-    "453.11023060.chunk.js.map": "/product-finder-spa/static/js/453.11023060.chunk.js.map"
+    "main.41d84a6d.css.map": "/product-finder-spa/static/css/main.41d84a6d.css.map",
+    "main.d9b327bb.js.map": "/product-finder-spa/static/js/main.d9b327bb.js.map",
+    "928.adec636f.chunk.css.map": "/product-finder-spa/static/css/928.adec636f.chunk.css.map",
+    "928.728fad38.chunk.js.map": "/product-finder-spa/static/js/928.728fad38.chunk.js.map",
+    "402.adec636f.chunk.css.map": "/product-finder-spa/static/css/402.adec636f.chunk.css.map",
+    "402.edc56d93.chunk.js.map": "/product-finder-spa/static/js/402.edc56d93.chunk.js.map",
+    "140.adec636f.chunk.css.map": "/product-finder-spa/static/css/140.adec636f.chunk.css.map",
+    "140.f302c159.chunk.js.map": "/product-finder-spa/static/js/140.f302c159.chunk.js.map",
+    "742.adec636f.chunk.css.map": "/product-finder-spa/static/css/742.adec636f.chunk.css.map",
+    "742.9c427456.chunk.js.map": "/product-finder-spa/static/js/742.9c427456.chunk.js.map",
+    "453.728befa3.chunk.js.map": "/product-finder-spa/static/js/453.728befa3.chunk.js.map",
+    "154.6a8ba19b.chunk.js.map": "/product-finder-spa/static/js/154.6a8ba19b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f9d6d243.css",
-    "static/js/main.83f74330.js"
+    "static/css/main.41d84a6d.css",
+    "static/js/main.d9b327bb.js"
   ]
 }
