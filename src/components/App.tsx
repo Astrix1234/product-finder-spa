@@ -23,7 +23,7 @@ const ProductByIdPage = lazy(
 function App() {
   const { loading } = store();
   return (
-    <>
+    <div data-testid="app">
       {loading && <Loader />}
       <ToastContainer
         position="top-right"
@@ -48,7 +48,7 @@ function App() {
           </Route>
         </Routes>
       </HelmetProvider>
-    </>
+    </div>
   );
 }
 

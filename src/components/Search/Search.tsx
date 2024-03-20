@@ -31,7 +31,7 @@ export const Search = () => {
   });
 
   return (
-    <div>
+    <div data-testid="search">
       <form className={scss.form} onSubmit={formik.handleSubmit}>
         <label htmlFor="id" className={scss.label}>
           Find product by ID

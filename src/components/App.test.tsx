@@ -1,8 +1,25 @@
 import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import App from './App';
+import { Layout } from './Layout/Layout';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders App component', () => {
+  render(
+    <MemoryRouter>
+      <App />
+    </MemoryRouter>
+  );
+  const appElement = screen.getByTestId('app');
+  expect(appElement).toBeInTheDocument();
+});
+
+test('renders Search component inside Layout component', () => {
+  render(
+    <MemoryRouter>
+      <Layout />
+    </MemoryRouter>
+  );
+
+  const searchElement = screen.getByTestId('search');
+  expect(searchElement).toBeInTheDocument();
 });

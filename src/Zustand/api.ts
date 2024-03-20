@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const apiUrl = process.env.REACT_APP_BASE_URL;
+const apiUrl = 'https://reqres.in/api/products';
 
 if (!apiUrl) {
   throw new Error(

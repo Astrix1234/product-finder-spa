@@ -1,46 +1,57 @@
-# Getting Started with Create React App
+# Product Finder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<img src="/public/Screenshot.png"  />
 
-## Available Scripts
+The task involves implementing a Single Page Application (SPA) with a single
+view. The application utilizes an available API endpoint to display a paginated
+list of products. In the interface, users can filter products by their
+identifier using a text field at the top of the view. The list of products is
+presented in a table, showing the identifier, name, year, and color of each
+product. Clicking on a row in the table reveals a modal displaying the full
+details of the selected product. Pagination allows browsing through 5 products
+per page, with users navigating between pages using "next" and "previous"
+arrows. Handling API errors is crucial; in case of an erroneous response, users
+are notified of the issue. Additionally, the application enables sharing links
+with filters and pagination via the URL address.
 
-In the project directory, you can run:
+## Technical Overview
 
-### `npm start`
+The task was completed using React and TypeScript technologies along with
+various libraries for state management, user interface styling, and testing. The
+application communicates with an external API to fetch and display data.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The final application consists of two main parts: presentation components and
+state management logic.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+For the presentation layer, the Material-UI library was utilized, providing
+ready-to-use UI components along with icons. Additionally, Styled Components and
+Emotion libraries were used for defining component styles in a modular and
+manageable way. Modern Normalize was applied to ensure consistent appearance
+across different browsers.
 
-### `npm test`
+In terms of state management, the Zustand library was used, allowing for simple
+and efficient state management. Two states were implemented: a loading state for
+data fetching and a filtering state for product filtering.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+React Router DOM library was employed for routing between pages, enabling
+navigation within the application. Each page was divided into separate modules
+using lazy loading, allowing components to load dynamically only when needed,
+thus enhancing the efficiency and speed of the application.
 
-### `npm run build`
+Regarding testing, Testing Library and Jest libraries were used for creating
+unit and integration tests. React Testing Library enables testing user
+interactions similarly to real user behavior.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Additionally, the following libraries were used:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Formik: for form handling, facilitating easy state management and form
+  validation.
+- React Helmet Async: for dynamic management of page metadata, impacting SEO
+  optimization.
+- React Loader Spinner: for displaying loading indicators during data fetching.
+- React Toastify: for displaying toast messages of various types of operations
+  in the user interface.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The application communicates with an external API to fetch a paginated list of
+products, filter results, and obtain detailed information about a selected
+product.
