@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import store from '../../Zustand/store';
 import { getProductById } from '../../Zustand/api';
@@ -34,10 +34,18 @@ export default function ProductByIdPage() {
     fetchProduct();
   }, [id, setProductById, setLoading]);
 
+  const totalId = 12;
+  if (id) {
+    const productId = parseInt(id, 10);
+    if (productId > totalId) {
+      return <Navigate to={'/page/1'} />;
+    }
+  }
+
   return (
     <>
       <Helmet>
-        <title>Product Finder - Product</title>
+        <title>Product Finder - Product {id}</title>
       </Helmet>
       <Table pageProducts={productById} />
     </>

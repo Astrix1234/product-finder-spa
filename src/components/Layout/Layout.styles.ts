@@ -19,6 +19,7 @@ export const PaginationContainer = styled.div`
 export const StyledLink = styled.a`
   color: grey;
   transition: color 0.3s ease-in-out;
+  cursor: pointer;
   &:hover {
     color: blue;
   }

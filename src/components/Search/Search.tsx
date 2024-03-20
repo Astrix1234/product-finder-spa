@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import scss from './Search.module.scss';
 import SearchIcon from '@mui/icons-material/Search';
 import { useFormik } from 'formik';
@@ -12,10 +12,9 @@ interface FormValues {
 
 export const Search = () => {
   const navigate = useNavigate();
-  const location = useLocation();
   const [hovered, setHovered] = useState(false);
 
-  const { setId, setPrevPath } = store();
+  const { setId } = store();
 
   const formik = useFormik<FormValues>({
     initialValues: {
@@ -24,7 +23,6 @@ export const Search = () => {
     validationSchema,
     onSubmit: (values: FormValues) => {
       setId(Number(values.id));
-      setPrevPath(location.pathname);
       navigate(`/product/${values.id}`);
       formik.resetForm();
     },

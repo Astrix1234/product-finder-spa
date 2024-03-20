@@ -30,25 +30,3 @@ export const getProductById = async (id: number) => {
     throw error;
   }
 };
-
-export const getLastProductOnFirstPage = async () => {
-  try {
-    const response = await axios.get(apiUrl, { params: { page: 1 } });
-    const lastProductIndex = response.data.data.length - 1;
-    return response.data.data[lastProductIndex];
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-};
-
-export const getLastTwoProductsOnLastPage = async () => {
-  try {
-    const response = await axios.get(apiUrl, { params: { page: 2 } });
-    const dataLength = response.data.data.length;
-    return response.data.data.slice(dataLength - 2);
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-};

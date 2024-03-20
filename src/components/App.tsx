@@ -7,14 +7,8 @@ import { Layout } from './Layout/Layout';
 import store from '../Zustand/store';
 import { Loader } from './Loader/Loader';
 
-const ProductsTable1Page = lazy(
-  () => import('../pages/ProductsTable1Page/ProductsTable1Page')
-);
-const ProductsTable2Page = lazy(
-  () => import('../pages/ProductsTable2Page/ProductsTable2Page')
-);
-const ProductsTable3Page = lazy(
-  () => import('../pages/ProductsTable3Page/ProductsTable3Page')
+const ProductsTablePage = lazy(
+  () => import('../pages/ProductsTablePage/ProductsTablePage')
 );
 const ProductByIdPage = lazy(
   () => import('../pages/ProductByIdPage/ProductByIdPage')
@@ -39,12 +33,10 @@ function App() {
       <HelmetProvider>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Navigate replace to="/page-1" />} />
-            <Route path="/page-1" element={<ProductsTable1Page />} />
-            <Route path="/page-2" element={<ProductsTable2Page />} />
-            <Route path="/page-3" element={<ProductsTable3Page />} />
+            <Route index element={<Navigate replace to="/page/1" />} />
+            <Route path="/page/:no" element={<ProductsTablePage />} />
             <Route path="/product/:id" element={<ProductByIdPage />} />
-            <Route path="*" element={<ProductsTable1Page />} />
+            <Route path="*" element={<Navigate replace to="/page/1" />} />
           </Route>
         </Routes>
       </HelmetProvider>

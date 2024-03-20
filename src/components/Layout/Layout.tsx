@@ -1,15 +1,13 @@
 import { Suspense } from 'react';
-import { Outlet, useLocation, Link as RouterLink } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { Search } from '../Search/Search';
 import { Container, PaginationContainer, StyledLink } from './Layout.styles';
 import BasicPagination from '../Pagination/Pagination';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import store from '../../Zustand/store';
 
 export const Layout = () => {
   const location = useLocation();
-  const { prevPath } = store();
-  const backLinkHref = prevPath === location.pathname ? '/' : prevPath ?? '/';
+  const navigate = useNavigate();
 
   return (
     <Container>
@@ -22,7 +20,7 @@ export const Layout = () => {
           <BasicPagination />
         </PaginationContainer>
       ) : (
-        <StyledLink as={RouterLink} to={backLinkHref}>
+        <StyledLink onClick={() => navigate(-1)}>
           <ArrowBackIcon style={{ fontSize: 40 }} />
         </StyledLink>
       )}
