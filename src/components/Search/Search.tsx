@@ -28,6 +28,11 @@ export const Search = () => {
     },
   });
 
+  const handleNumericChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const filteredValue = e.target.value.replace(/\D/g, '');
+    formik.setFieldValue('id', filteredValue);
+  };
+
   return (
     <div data-testid="search">
       <form className={scss.form} onSubmit={formik.handleSubmit}>
@@ -37,7 +42,7 @@ export const Search = () => {
             className={`${scss.input} ${formik.errors.id ? scss.error : ''}`}
             id="id"
             name="id"
-            onChange={formik.handleChange}
+            onChange={handleNumericChange}
             value={formik.values.id}
           />
           {formik.errors.id ? (
